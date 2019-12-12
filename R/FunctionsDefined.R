@@ -85,6 +85,7 @@
     ddg.func.defs <- rbind( ddg.func.defs, new.row)
     .ddg.set( "ddg.function.defs", ddg.func.defs )
   }
+  # print(ddg.func.defs)
 }
 
 #' .ddg.find.nonlocals.set

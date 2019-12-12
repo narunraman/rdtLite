@@ -244,9 +244,22 @@
   if (!.ddg.is.data.type (dtype)) {
     print (paste (".ddg.record.data: bad value for dtype - ", dtype))
   }
-  
+
   # Increment data node counter.
   ddg.dnum <- .ddg.inc("ddg.dnum")
+  
+  # Push to CamFlow in real-time
+  # Currently only pushing the dname for entities and dname + dvalue for activities
+  # May want to add more verbose functionality
+  # print(paste(dtype, ddg.dnum))
+  
+  if(.ddg.realtime()) {
+     # node_id = paste(dtype, ddg.dnum)
+     # disclosed_entities[[node_id]] <- disclose_realtime_entities(dname)
+     # disclosed_activities[[node_id]] <- disclose_realtime_activities(paste(dname, "<-", dvalue))
+     .ddg.record.camflow("entities", ddg.dnum, dname)
+     print(.ddg.camflow.node.table()[1:10,])
+  }
   
   # If the table is full, make it bigger.
   ddg.data.nodes <- .ddg.data.node.table()

@@ -107,7 +107,20 @@
   if (!.ddg.is.edge.type (etype)) {
     print (paste (".ddg.record.edge: bad value for etype - ", etype))
   }
+	
+  # print(.ddg.edge.table()[1:15,])
+
+  # if(disclose_rt) {
+
+	  # df.in == data2proc
+	  # df.out == proc2data
+	  # cf == proc2proc
+	  
+  # }
   
+  # print(paste("edge type: " , etype))
+  # print(paste("node 1: ", node1))
+
   ddg.edges <- .ddg.edge.table()
   
   # Don't add the edge if it already exists.

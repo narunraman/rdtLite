@@ -264,7 +264,11 @@
   if (nrow(ddg.proc.nodes) < ddg.pnum) {
     ddg.proc.nodes <- .ddg.add.rows("ddg.proc.nodes", .ddg.create.proc.node.rows())
   }
-  
+
+  if(.ddg.realtime()) {
+    .ddg.record.camflow("activity", ddg.pnum, pname)
+  }
+
   # Fill in the next row
   ddg.proc.nodes$ddg.type[ddg.pnum] <- ptype
   ddg.proc.nodes$ddg.num[ddg.pnum] <- ddg.pnum

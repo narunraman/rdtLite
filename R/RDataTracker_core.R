@@ -191,7 +191,8 @@
   .ddg.init.data.nodes()
   .ddg.init.edges()
   .ddg.init.function.table()
-  
+  .ddg.init.camflow.nodes()
+
   # Used to control debugging output.  If already defined, don't
   # change its value.
   if (!.ddg.is.set("ddg.debug.lib")) .ddg.set("ddg.debug.lib", FALSE)

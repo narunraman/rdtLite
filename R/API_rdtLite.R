@@ -188,7 +188,7 @@ prov.quit <- function(save.debug = FALSE) {
 #' prov.quit()
 
 prov.run <- function(r.script.path, prov.dir = NULL, overwrite = TRUE, details = TRUE, 
-  snapshot.size = 0, hash.algorithm = "md5", save.debug = FALSE, exprs, ...) {
+  snapshot.size = 0, hash.algorithm = "md5", save.debug = FALSE, realtime = FALSE, exprs, ...) {
   
   # Stop & display message if R script path is missing
   if (missing(r.script.path) && missing(exprs)) {
@@ -235,6 +235,9 @@ prov.run <- function(r.script.path, prov.dir = NULL, overwrite = TRUE, details =
 
   # Set script mode to True
   .ddg.set("ddg.script.mode", TRUE)
+	
+  # Set realtime collection value
+  .ddg.set("ddg.realtime", realtime)
 
   # Intialize the provenance graph
   prov.init(prov.dir, overwrite, snapshot.size, hash.algorithm, save.debug)

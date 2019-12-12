@@ -158,6 +158,14 @@
   return(.ddg.get("ddg.details"))
 }
 
+.ddg.realtime <- function() {
+  if (!.ddg.is.set("ddg.realtime")) {
+    .ddg.set("ddg.realtime", FALSE)
+  }
+
+  return(.ddg.get("ddg.realtime"))
+}
+
 ##### Mutators for specific common actions
 
 #' .ddg.inc increments a ddg counter
